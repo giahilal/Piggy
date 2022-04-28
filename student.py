@@ -40,7 +40,7 @@ class Piggy(PiggyParent):
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
-                "q": ("Quit", self.quit)
+                "q": ("Quit", self.quit),
                 "g": ("Gia", self.gia)
                 }
         # loop and print the menu...
@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def gia(self):
-      self.forward()
+      self.fwd()
       time.sleep(2)
       self.stop()
       
