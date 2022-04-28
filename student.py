@@ -57,7 +57,7 @@ class Piggy(PiggyParent):
     ****************
     '''
     def gia(self):
-      self.fwd()
+      self.forward()
       time.sleep(2)
       self.stop()
       
