@@ -53,15 +53,15 @@ class PiggyParent(gopigo3.GoPiGo3):
             while True:
                 self.set_motor_limits(self.MOTOR_LEFT, self.LEFT_DEFAULT)
                 self.set_motor_limits(self.MOTOR_RIGHT, self.RIGHT_DEFAULT)
-                print("LEFT: {} // RIGHT: {} ".format(self.MOTOR_LEFT, self.MOTOR_RIGHT))
+                print("LEFT: {} // RIGHT: {} ".format(self.LEFT_DEFAULT, self.RIGHT_DEFAULT))
                 self.fwd()
                 time.sleep(1)
                 self.stop()
                 response = str.lower(input("Reduce left, reduce right or drive? (l/r/d): "))
                 if response == 'l':
-                    self.LEFT_SPEED -= 5
+                    self.LEFT_DEFAULT -= 5
                 elif response == 'r':
-                    self.RIGHT_SPEED -= 5
+                    self.RIGHT_DEFAULT -= 5
                 elif response == 'd':
                     self.fwd()
                     time.sleep(1)
