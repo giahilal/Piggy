@@ -81,6 +81,8 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(0.8)
         self.turn_by_deg(-60)
+        time.sleep(0.8)
+        self.fwd()
         self.stop()
 
     #def safe_to_dance(self):
