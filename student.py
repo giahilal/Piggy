@@ -60,7 +60,7 @@ class Piggy(PiggyParent):
       for edge in range(4):
         self.fwd()
         time.sleep(2)
-        self.turn_to_deg(75)
+        self.turn_by_deg(75)
         time.sleep(0.8)
       self.stop()
       
