@@ -75,7 +75,7 @@ class Piggy(PiggyParent):
         self.back()
         time.sleep(1)
         self.right(primary=90, counter=-90)
-        time.sleep(1.8)
+        time.sleep(0.8)
         self.turn_by_deg(30)
         time.sleep(0.8)
         self.fwd()
