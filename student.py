@@ -71,7 +71,7 @@ class Piggy(PiggyParent):
         
         # lower-ordered example...
         self.fwd()
-        self.right(primary=360, counter=-360)
+        self.right(primary=90, counter=-90)
 
     #def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
