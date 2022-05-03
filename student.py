@@ -71,6 +71,9 @@ class Piggy(PiggyParent):
         
         # lower-ordered example...
         self.fwd()
+        time.sleep(1)
+        self.back()
+        time.sleep(1)
         self.right(primary=90, counter=-90)
 
     #def safe_to_dance(self):
