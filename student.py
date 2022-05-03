@@ -58,9 +58,11 @@ class Piggy(PiggyParent):
     '''
     def gia(self):
       for edge in range(4):
-        self.fwd(80)
+        self.fwd()
         time.sleep(2)
-        self.right(70)
+        self.right(90)
+        time.sleep(0.8)
+      self.stop()
       
 
     def dance(self):
