@@ -60,7 +60,7 @@ class Piggy(PiggyParent):
       for edge in range(4):
         self.fwd(80)
         time.sleep(2)
-        self.right(180)
+        self.right(70)
       
 
     def dance(self):
