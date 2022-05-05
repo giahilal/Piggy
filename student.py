@@ -89,6 +89,8 @@ class Piggy(PiggyParent):
           self.right()
           time.sleep(5)
           self.stop()
+      else:
+        print("Can't dance")
 
     def shake(self):
         """ Another example move """
