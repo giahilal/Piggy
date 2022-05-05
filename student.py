@@ -82,7 +82,7 @@ class Piggy(PiggyParent):
 
 
     def dance(self):
-      #if self.safe_to_dance = True:
+      if self.safe_to_dance():
           self.fwd()
           time.sleep(1)
           self.stop()
@@ -97,7 +97,6 @@ class Piggy(PiggyParent):
 
     def move(self):
       while self.read_distance()>= 600:
-        self.read_distance()
         self.fwd()
         time.sleep(0.5)
       
@@ -106,7 +105,6 @@ class Piggy(PiggyParent):
 
     def turn_around(self):
       while self.read_distance()>= 600:
-        self.read_distance()
         self.fwd()
         time.sleep(0.5)
       
