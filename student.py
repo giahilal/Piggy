@@ -41,7 +41,8 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "g": ("Gia", self.gia)
+                "g": ("Gia", self.gia),
+                "m": ("Move", self.move)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -80,7 +81,7 @@ class Piggy(PiggyParent):
 
 
     def dance(self):
-      if self.safe_to_dance = True:
+      #if self.safe_to_dance = True:
           self.fwd()
           time.sleep(1)
           self.stop()
