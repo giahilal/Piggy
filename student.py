@@ -69,18 +69,23 @@ class Piggy(PiggyParent):
 
     
     def safe_to_dance(self):
-        self.servo(600)
+        self.servo(self.MIDPOINT - 400)
         time.sleep(2)
         if self.read_distance()<= 300:
           print("I see Something")
+          self.servo(self.MIDPOINT)
           return False
-        self.servo(1500)
+        self.servo(self.MIDPOINT + 400)
         time.sleep(2)
         if self.read_distance()<= 300:
           print("I see Something")
+          self.servo(self.MIDPOINT)
+
           return False
         else:
           print("I see nothing")
+          self.servo(self.MIDPOINT)
+
           return True
 
 
