@@ -70,12 +70,12 @@ class Piggy(PiggyParent):
     
     def safe_to_dance(self):
         self.servo(1000)
-        time.sleep(0.25)
+        time.sleep(2)
         if self.read_distance()<= 300:
           print("I see Something")
           return False
         self.servo(2000)
-        time.sleep(0.25)
+        time.sleep(2)
         if self.read_distance()<= 300:
           print("I see Something")
           return False
