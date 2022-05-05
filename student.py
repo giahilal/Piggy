@@ -66,7 +66,7 @@ class Piggy(PiggyParent):
       
 
     def dance(self):
-      if self.safe_to_dance returns True:
+      if self.safe_to_dance return True:
           self.fwd()
           time.sleep(1)
           self.stop()
