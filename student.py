@@ -65,15 +65,7 @@ class Piggy(PiggyParent):
       self.stop()
       
 
-    def dance(self):
-      if self.safe_to_dance return True:
-          self.fwd()
-          time.sleep(1)
-          self.stop()
-          self.right()
-          time.sleep(5)
-          self.stop()
-
+    
     def safe_to_dance(self):
         self.servo(1000)
         time.sleep(0.25)
@@ -85,7 +77,17 @@ class Piggy(PiggyParent):
           return False
         else:
           return True
-        
+
+
+    def dance(self):
+      if self.safe_to_dance return True:
+          self.fwd()
+          time.sleep(1)
+          self.stop()
+          self.right()
+          time.sleep(5)
+          self.stop()
+
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
