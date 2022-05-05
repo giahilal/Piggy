@@ -102,6 +102,17 @@ class Piggy(PiggyParent):
       
       else:
         self.stop()
+
+    def turn_around():
+      while self.read_distance()>= 600:
+        self.read_distance()
+        self.fwd()
+        time.sleep(0.5)
+      
+      else:
+        self.stop()
+        self.turn_by_deg(360)
+        self.fwd()
   
 
     def scan(self):
