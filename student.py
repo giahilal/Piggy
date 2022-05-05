@@ -95,7 +95,6 @@ class Piggy(PiggyParent):
         self.stop()
 
     def move(self):
-        """this is an example dance move that should be replaced by student-created content"""
       while self.read_distance()>= 600:
         self.read_distance()
         self.fwd()
