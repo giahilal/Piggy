@@ -77,23 +77,34 @@ class Piggy(PiggyParent):
         time.sleep(5)
         self.stop()
 
-    #def safe_to_dance(self):
+    def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
-        
+      self.servo(1000)
+      time.sleep(0.25)
+      if self.read_distance()<= 300:
+        return False
+      self.servo(2000)
+      time.sleep(0.25)
+      if self.read_distance()<= 300:
+        return False
+      else:
+        return True
         
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
         self.stop()
 
-    def example_move(self):
+    def move(self):
         """this is an example dance move that should be replaced by student-created content"""
-        self.right() # start rotating right
-        time.sleep(1) # turn for a second
-        self.stop() # stop
-        self.servo(1000) # look right
-        time.sleep(.25) # give your head time to move
-        self.servo(2000) # look left
+      while self.read_distance()>= 600:
+        self.read_distance()
+        self.fwd()
+        time.sleep(0.5)
+      
+      else:
+        self.stop()
+  
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
