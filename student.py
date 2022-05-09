@@ -116,7 +116,7 @@ class Piggy(PiggyParent):
     def turn_around(self):
       while self.read_distance()>= 600:
         self.fwd()
-        time.sleep(0.5)
+        time.sleep(1)
       
       else:
         self.stop()
