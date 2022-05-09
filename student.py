@@ -120,6 +120,8 @@ class Piggy(PiggyParent):
         self.stop()
         self.turn_by_deg(180)
         self.fwd()
+        self.stop()
+
   
 
     def scan(self):
