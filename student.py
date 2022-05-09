@@ -114,12 +114,12 @@ class Piggy(PiggyParent):
         self.stop()
 
     def turn_around(self):
-      while self.read_distance()>= 600:
+      while True:
+        self.servo(self.MIDPOINT)
         self.fwd()
-      while self.read_distance()< 600:
-        self.turn_by_deg(180)
-        self.fwd()
-
+        if self.read_distance()<= 500:
+          self.stop()
+          self.turn_by_deg(180)
 
   
 
