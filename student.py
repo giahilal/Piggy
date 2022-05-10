@@ -43,7 +43,7 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "g": ("Gia", self.gia),
                 "m": ("Move", self.move),
-                "t": ("Turn", self.turn_around)
+                "t": ("Turn", self.turn_around),
                 "b": ("Box", self.move_around_box)
                 }
         # loop and print the menu...
