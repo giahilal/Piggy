@@ -125,6 +125,7 @@ class Piggy(PiggyParent):
     def move_around_box(self):
       if self.safe_to_dance() == False:
         self.fwd()
+        time.sleep(2)
         self.turn_by_deg(80)
         
       
