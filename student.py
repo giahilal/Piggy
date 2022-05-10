@@ -124,7 +124,7 @@ class Piggy(PiggyParent):
 
     def move_around_box(self):
       while self.read_distance()<= 200:
-        for edge in range 4:
+        for edge in range (4):
           self.turn_by_deg(80)
           self.fwd()
           time.sleep(0.5)
