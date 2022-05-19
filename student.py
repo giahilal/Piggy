@@ -124,12 +124,13 @@ class Piggy(PiggyParent):
 
     def move_around_box(self):
       while self.safe_to_dance():
-        self.fwd()
-      else:
         for edge in range (4):
           self.turn_by_deg(80)
           self.fwd()
           time.sleep(2)
+      else:
+        self.fwd()
+        time.sleep(0.5)
         
       
 
