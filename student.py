@@ -123,7 +123,7 @@ class Piggy(PiggyParent):
           self.turn_by_deg(180)
 
     def move_around_box(self):
-      if self.read_distance()<= 500:
+      while self.read_distance()<= 300:
         self.turn_by_deg(80)
         print("woking")
         self.servo(self.MIDPOINT + 100)
