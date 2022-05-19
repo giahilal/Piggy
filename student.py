@@ -125,10 +125,12 @@ class Piggy(PiggyParent):
     def move_around_box(self):
       if self.read_distance()<= 500:
         self.turn_by_deg(80)
+        print("woking")
         self.servo(self.MIDPOINT + 100)
         self.fwd()
         time.sleep(2)
       else:
+        print("hello")
         self.fwd()
         time.sleep(0.5)
         
