@@ -123,11 +123,11 @@ class Piggy(PiggyParent):
           self.turn_by_deg(180)
 
     def move_around_box(self):
-      while self.safe_to_dance():
-        for edge in range (4):
-          self.turn_by_deg(80)
-          self.fwd()
-          time.sleep(2)
+      if self.read_distance()<= 150:
+        self.servo(self.MIDPOINT + 100)
+        self.turn_by_deg(80)
+        self.fwd()
+        time.sleep(2)
       else:
         self.fwd()
         time.sleep(0.5)
