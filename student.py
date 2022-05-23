@@ -141,10 +141,8 @@ class Piggy(PiggyParent):
             time.sleep(0.25)
             self.fwd()
             time.sleep(1)
-            self.servo(2000)
-            box_length = self.read_distance()
-            while box_length < 50:
-              self.fwd()
+            self.servo(self.MIDPOINT)
+            self.turn_by_deg(-80)
           if left_distance > right_distance:
             self.turn_by_deg(-80)
             time.sleep(0.25)
@@ -152,10 +150,8 @@ class Piggy(PiggyParent):
             time.sleep(0.25)
             self.fwd()
             time.sleep(1)
-            self.servo(2000)
-            box_length = self.read_distance()
-            while box_length < 50:
-              self.fwd()
+            self.servo(self.MIDPOINT)
+            self.turn_by_deg(80)
         
       
 
