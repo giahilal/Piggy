@@ -127,9 +127,9 @@ class Piggy(PiggyParent):
         if self.read_distance()<= 300:
           self.turn_by_deg(80)
           print("woking")
-          self.servo(self.MIDPOINT + 100)
           self.fwd()
           time.sleep(2)
+          self.turn_by_deg(-80)
         else:
           print("hello")
           self.fwd()
