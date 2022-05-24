@@ -124,7 +124,7 @@ class Piggy(PiggyParent):
 
     def move_around_box(self):
       while True:
-          self.fwd()
+          self.fwd(30, 30)
           self.servo(1000)
           time.sleep(0.15)
           self.servo(self.MIDPOINT)
