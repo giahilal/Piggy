@@ -128,36 +128,37 @@ class Piggy(PiggyParent):
         self.servo(1000)
         self.servo(self.MIDPOINT)
         self.servo(2000)
-        while True:
-          self.servo(self.MIDPOINT)
-          self.fwd()
-          if self.read_distance()<= 300:
-            self.stop()
-            
-            self.servo(1000)
-            time.sleep(0.25)
-            right_distance = self.read_distance()
-            
-            self.servo(2000)
-            time.sleep(0.25)
-            left_distance = self.read_distance()
-            if right_distance > left_distance:
-              self.turn_by_deg(80)
+        if self.read_distance()<=300:
+          while True:
+            self.servo(self.MIDPOINT)
+            self.fwd()
+            if self.read_distance()<= 300:
+              self.stop()
+              
+              self.servo(1000)
               time.sleep(0.25)
-              self.fwd()
-              time.sleep(1)
-              self.servo(self.MIDPOINT)
-              self.turn_by_deg(-80)
-            if left_distance > right_distance:
-              self.turn_by_deg(-80)
+              right_distance = self.read_distance()
+              
+              self.servo(2000)
               time.sleep(0.25)
-              self.fwd()
-              time.sleep(0.25)
-              self.fwd()
-              time.sleep(1)
-              self.servo(self.MIDPOINT)
-              self.turn_by_deg(80)
-        
+              left_distance = self.read_distance()
+              if right_distance > left_distance:
+                self.turn_by_deg(80)
+                time.sleep(0.25)
+                self.fwd()
+                time.sleep(1)
+                self.servo(self.MIDPOINT)
+                self.turn_by_deg(-80)
+              if left_distance > right_distance:
+                self.turn_by_deg(-80)
+                time.sleep(0.25)
+                self.fwd()
+                time.sleep(0.25)
+                self.fwd()
+                time.sleep(1)
+                self.servo(self.MIDPOINT)
+                self.turn_by_deg(80)
+          
       
 
     def scan(self):
