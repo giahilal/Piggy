@@ -124,11 +124,10 @@ class Piggy(PiggyParent):
 
     def move_around_box(self):
       while True:
-        self.fwd()
-        while True:
-          self.servo(1000)
+          self.fwd()
+          self.servo(500)
           self.servo(self.MIDPOINT)
-          self.servo(2000)
+          self.servo(2500)
           self.servo(self.MIDPOINT)
           if self.read_distance()<=300:
             self.servo(self.MIDPOINT)
