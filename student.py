@@ -123,8 +123,8 @@ class Piggy(PiggyParent):
           self.turn_by_deg(180)
 
     def move_around_box(self):
-      self.fwd()
       while True:
+        self.fwd()
         self.servo(1000)
         self.servo(self.MIDPOINT)
         self.servo(2000)
