@@ -159,6 +159,21 @@ class Piggy(PiggyParent):
                 time.sleep(1)
                 self.servo(self.MIDPOINT)
                 self.turn_by_deg(80)
+              if right_distance <= 300:
+                self.servo(self.MIDPOINT)
+                if self.read_distance() >= 400:
+                  self.left()
+                  time.sleep(0.5)
+                  self.right()
+                  time.sleep(0.3)
+              if left_distance <= 300:
+                self.servo(self.MIDPOINT)
+                if self.read_distance() >= 400:
+                  self.right()
+                  time.sleep(0.5)
+                  self.left()
+                  time.sleep(0.4)
+                
           
       
 
