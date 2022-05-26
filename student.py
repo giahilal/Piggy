@@ -125,57 +125,69 @@ class Piggy(PiggyParent):
     def move_around_box(self):
       while True:
           self.fwd(30, 30)
+        
           self.servo(1000)
           time.sleep(0.15)
-          self.servo(self.MIDPOINT)
-          time.sleep(0.25)
-          self.servo(2000)
-          time.sleep(0.15)
-          self.servo(self.MIDPOINT)
           if self.read_distance()<=350:
             self.servo(self.MIDPOINT)
-            self.fwd()
-            if self.read_distance()<= 350:
+            time.sleep(0.25)
+            if self.read_distance()<=350:
+                self.stop()
+                self.check_edge()
+            else:
+              self.left(primary=90, counter=60)
+              time.sleep(0.5)
+              self.right(primary=90, counter=60)
+              time.sleep(0.3)
+          
+          
+          self.servo(2000)
+          time.sleep(0.15)
+          if self.read_distance()<=350:
+            self.servo(self.MIDPOINT)
+            time.sleep(0.25)
+            if self.read_distance()<=350:
+                self.stop()
+                self.check_edge()
+            else:
+              self.right(primary=90, counter=60)
+              time.sleep(0.5)
+              self.left(primary=90, counter=60)
+              time.sleep(0.3)
+        
+          self.servo(self.MIDPOINT)
+          time.sleep(0.25)
+          if self.read_distance()<=350:
               self.stop()
-              
-              self.servo(1000)
-              time.sleep(0.25)
-              right_distance = self.read_distance()
-              
-              self.servo(2000)
-              time.sleep(0.25)
-              left_distance = self.read_distance()
-              if right_distance > left_distance:
-                self.turn_by_deg(80)
-                time.sleep(0.25)
-                self.fwd()
-                time.sleep(1)
-                self.servo(self.MIDPOINT)
-                self.turn_by_deg(-80)
-              if left_distance > right_distance:
-                self.turn_by_deg(-80)
-                time.sleep(0.25)
-                self.fwd()
-                time.sleep(1)
-                self.servo(self.MIDPOINT)
-                self.turn_by_deg(80)
-              if right_distance <= 300:
-                self.servo(self.MIDPOINT)
-                if self.read_distance() >= 400:
-                  self.left()
-                  time.sleep(0.5)
-                  self.right()
-                  time.sleep(0.3)
-              if left_distance <= 300:
-                self.servo(self.MIDPOINT)
-                if self.read_distance() >= 400:
-                  self.right()
-                  time.sleep(0.5)
-                  self.left()
-                  time.sleep(0.4)
+              self.check_edge()
+             
+             
                 
           
-      
+    def check_edge(self):
+        self.servo(1000)
+        time.sleep(0.25)
+        right_distance = self.read_distance()
+        
+        self.servo(2000)
+        time.sleep(0.25)
+        left_distance = self.read_distance()
+        
+        if right_distance > left_distance:
+          self.turn_by_deg(80)
+          time.sleep(0.25)
+          self.fwd()
+          time.sleep(1)
+          self.servo(self.MIDPOINT)
+          self.turn_by_deg(-80)
+          
+        if left_distance > right_distance:
+          self.turn_by_deg(-80)
+          time.sleep(0.25)
+          self.fwd()
+          time.sleep(1)
+          self.servo(self.MIDPOINT)
+          self.turn_by_deg(80)
 
     def scan(self):
         """Sweep the servo and populate the scan_data dictionary"""
