@@ -128,10 +128,10 @@ class Piggy(PiggyParent):
         
           self.servo(1000)
           time.sleep(0.15)
-          if self.read_distance()<=350:
+          if self.read_distance()<=200:
             self.servo(self.MIDPOINT)
             time.sleep(0.25)
-            if self.read_distance()<=350:
+            if self.read_distance()<=200:
                 self.stop()
                 self.check_edge()
             else:
@@ -143,10 +143,10 @@ class Piggy(PiggyParent):
           
           self.servo(2000)
           time.sleep(0.15)
-          if self.read_distance()<=350:
+          if self.read_distance()<=200:
             self.servo(self.MIDPOINT)
             time.sleep(0.25)
-            if self.read_distance()<=350:
+            if self.read_distance()<=200:
                 self.stop()
                 self.check_edge()
             else:
